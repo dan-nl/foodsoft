@@ -3,6 +3,8 @@ tmp/**/*
 config/app_config.yml
 config/database.yml
 config/initializers/secret_token.rb
+docker/dev/.env
+docker/prod/.env
 db/*.sqlite3
 nbproject/
 config/environments/development.rb

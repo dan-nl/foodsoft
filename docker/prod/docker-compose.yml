@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  web: &app
+    build:
+      context: ../../
+      dockerfile: ./docker/dev/Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mailcatcher
+      - mysql
+      - redis
+
+  mailcatcher:
+    image: aboutsource/mailcatcher
+    ports:
+      - "1080:1080"
+
+  mysql:
+    image: mysql:5.5
+    env_file:
+      - .env
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mysql_data:/var/lib/mysql'
+
+  redis:
+    image: redis:3.2
+
+  resque:
+    <<: *app
+    command: rake resque:work
+    ports: []
+
+volumes:
+  mysql_data: {}

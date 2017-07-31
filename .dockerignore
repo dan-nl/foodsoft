@@ -2,7 +2,6 @@
 .idea
 .sass-cache
 log
-config/database.yml
 public/assets
 public/system
 tmp/*

@@ -31,6 +31,10 @@ Setup foodsoft to [run in production](doc/SETUP_PRODUCTION.md),
 and automate [deployment](doc/DEPLOYMENT.md). This section is
 very much a work in progress.
 
+Docker
+------
+
+We’ve setup a few docker files to enable you to use docker with the project if you wish; see this [docker page](doc/DOCKER.md) for further info.
 
 License
 -------
